@@ -8,6 +8,7 @@
       gnome-tweaks
       gnome-extension-manager
       gnomeExtensions.clipboard-indicator
+      gnomeExtensions.appindicator
     ];
 
     dconf.settings = {
@@ -15,6 +16,7 @@
         disable-user-extensions = false;
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
+          "appindicatorsupport@rgcjonas.gmail.com"
         ];
       };
 
@@ -22,6 +24,8 @@
         history-size = 50;
         display-mode = 0;
         preview-size = 30;
+        move-item-first = true;
+        paste-on-selection = true;
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
