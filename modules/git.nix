@@ -11,8 +11,10 @@
       };
     };
 
-    config = {
-      credential.helper = "store";
+    extraConfig = {
+      credential = {
+        helper = "store";
+      };
     };
   };
 
