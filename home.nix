@@ -33,7 +33,6 @@
     vlc
 
     # Development tools
-    azure-cli
     uv
 
     # Development GUI applications
