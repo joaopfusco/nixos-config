@@ -1,0 +1,54 @@
+{ config, pkgs, lib, ... }:
+
+{
+  options.features.gnome.enable = lib.mkEnableOption "Configurações e Extensões do GNOME";
+
+  config = lib.mkIf config.features.gnome.enable {
+    home.packages = with pkgs; [
+      gnome-tweaks
+      gnome-extension-manager
+      gnomeExtensions.clipboard-indicator
+    ];
+
+    dconf.settings = {
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          "clipboard-indicator@tudmotu.com"
+        ];
+      };
+
+      "org/gnome/shell/extensions/clipboard-indicator" = {
+        history-size = 50;
+        display-mode = 0;
+        preview-size = 30;
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        ];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>t";
+        command = "alacritty";
+        name = "Open Alacritty Terminal";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>e";
+        command = "nautilus";
+        name = "Open Nautilus File Manager";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        binding = "<Super>i";
+        command = "gnome-control-center";
+        name = "Open GNOME Control Center";
+      };
+    };
+  };
+}
