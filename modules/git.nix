@@ -9,9 +9,6 @@
         name = "joaopfusco";
         email = "joaopedrofusco@gmail.com";
       };
-    };
-
-    extraConfig = {
       credential = {
         helper = "store";
       };
@@ -21,7 +18,6 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
+    startAgent = true;
   };
-
-  services.ssh-agent.enable = true;
 }
