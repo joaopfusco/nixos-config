@@ -18,6 +18,15 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
-    startAgent = true;
+    forwardAgent = false;
+
+    matchBlocks = {
+      "github.com gitlab.com" = {
+        identityFile = "~/.ssh/id_ed25519";
+        user = "git";
+      };
+    };
   };
+
+  services.ssh-agent.enable = true;
 }
