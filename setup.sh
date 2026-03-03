@@ -6,7 +6,7 @@ set -e
 read -p "Qual é o nome deste host (ex: nixos, nixos-vm)? " HOSTNAME
 
 # Variável para o arquivo de trava de segurança
-LOCKFILE="hosts/$HOSTNAME/.setup_done"
+LOCKFILE="$HOME/.config/nixos-config-setup-$HOSTNAME.lock"
 
 # 1. Trava de Segurança
 # Verifica se o setup já rodou para este host
@@ -43,7 +43,6 @@ sudo nixos-rebuild switch --flake .#$HOSTNAME
 
 # 5. Ativa a trava de segurança para o futuro
 touch "$LOCKFILE"
-git add "$LOCKFILE"
 
 echo ""
 echo "✅ Sistema configurado com sucesso!"
