@@ -74,11 +74,6 @@
         command = "gnome-control-center";
         name = "Open GNOME Control Center";
       };
-
-      "org/gnome/desktop/applications/media" = {
-        video = "vlc.desktop";
-        audio = "vlc.desktop";
-      };
     };
   };
 }
