@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Bluefin: chsh -s $(which zsh) # nao executar no host, apenas na distobox
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -14,9 +12,8 @@
       la = "ls -la";
       cls = "clear";
       home-update = "home-manager switch --flake .#joaop";
-      vm-status = "systemctl status libvirtd";
-      vm-start = "sudo systemctl start libvirtd";
-      vm-stop = "sudo systemctl stop 'libvirtd*'";
+      os-update = "sudo nixos-rebuild switch --flake .#$(hostname)";
+      os-test = "sudo nixos-rebuild test --flake .#$(hostname)";
     };
 
     initContent = ''

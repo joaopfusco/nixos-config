@@ -12,7 +12,7 @@
   boot.loader.grub.devices = [ "/dev/vda" ];
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = host;
 
   # Enable networking
   networking.networkmanager.enable = true;
