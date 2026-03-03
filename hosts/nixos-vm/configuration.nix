@@ -142,9 +142,6 @@
     description = "Joao Pedro Fusco";
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "dialout" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
   
   # Install Firefox
   programs.firefox.enable = true;

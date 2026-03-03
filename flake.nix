@@ -21,9 +21,9 @@
     in {
       nixosConfigurations = nixpkgs.lib.genAttrs hostNames (host:
         nixpkgs.lib.nixosSystem {
-          inherit system;
           specialArgs = { inherit host username inputs; };
           modules = [
+            { nixpkgs.pkgs = pkgs; }
             ./hosts/${host}/hardware-configuration.nix
             ./hosts/${host}/configuration.nix
             home-manager.nixosModules.home-manager
