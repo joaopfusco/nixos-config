@@ -9,6 +9,7 @@
     ./modules/direnv.nix
     ./modules/mise.nix
     ./modules/pwas.nix
+    ./modules/alacritty.nix
   ];
 
   # Enable the custom GNOME module
@@ -25,7 +26,6 @@
     papirus-icon-theme
 
     # GUI applications
-    alacritty
     libreoffice
     google-chrome
     discord

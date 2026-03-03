@@ -3,7 +3,6 @@
 {
   programs.git = {
     enable = true;
-    
     settings = {
       user = {
         name = "joaopfusco";
@@ -18,7 +17,6 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-
     matchBlocks = {
       "github.com gitlab.com" = {
         identityFile = "~/.ssh/id_ed25519";

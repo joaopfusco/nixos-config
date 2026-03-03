@@ -6,7 +6,6 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
     shellAliases = {
       # Common aliases
       ll = "ls -l";
