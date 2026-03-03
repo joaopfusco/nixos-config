@@ -16,7 +16,7 @@
         experimental = true;
         shims = true;
       };
-    }
+    };
   };
 
   home.sessionPath = [
