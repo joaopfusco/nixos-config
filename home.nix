@@ -27,6 +27,7 @@
 
     # GUI applications
     libreoffice
+    alacarte
     google-chrome
     discord
     obs-studio
