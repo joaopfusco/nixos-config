@@ -21,5 +21,3 @@ sudo nixos-rebuild switch --flake .#$HOSTNAME
 
 echo ""
 echo "✅ Sistema configurado com sucesso!"
-echo "⚠️  IMPORTANTE: O sistema já está usando a sua configuração."
-echo "⚠️  Porém, como mudamos para SSH, você precisa gerar sua chave e adicionar no GitHub antes de conseguir dar 'git push'."
