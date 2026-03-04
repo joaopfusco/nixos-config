@@ -47,6 +47,7 @@
         preview-size = 30;
         move-item-first = true;
         paste-on-selection = true;
+        toggle-menu = [ "<Super>j" ];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
