@@ -126,10 +126,6 @@
     pulse.enable = true;
   };
 
-  # Enable Flatpak support
-  services.flatpak.enable = true;
-  # Run flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
   # Docker
   virtualisation.docker.enable = true;
 
