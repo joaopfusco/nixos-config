@@ -79,7 +79,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         binding = "<Super>c";
-        command = "code --new-window /home/joaop/nixos-config/";
+        command = "code --new-window ${config.home.homeDirectory}/nixos-config/";
         name = "Open NixOS Config";
       };
     };
