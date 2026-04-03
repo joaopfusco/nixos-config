@@ -1,4 +1,4 @@
-# 🐧 NixOS com Flakes & Home Manager
+# 🐧 Nix com Flakes & Home Manager
 
 ## ⚙️ Pré-requisitos
 
@@ -6,7 +6,7 @@
    - `flake.nix` (descrição de inputs e outputs)
    - `hosts/<nome-do-host>/configuration.nix` (configuração global do sistema por host)
    - `hosts/<nome-do-host>/hardware-configuration.nix` (configurações do hardware do sistema por host)
-   - `home.nix` (configuração do Home Manager)
+   - `hosts/<nome-do-host>/home.nix` (configuração do Home Manager por host)
 
 2. **Clone** do repositório atual:
    ```bash
@@ -29,7 +29,7 @@
 | Build & Switch                   | `nixos-rebuild switch --flake .#nixos-vm`                                  |
 | Build sem restart                | `nixos-rebuild build --flake .#nixos-vm && result/bin/switch-to-configuration switch` |
 | Testar (dry-run)                 | `nixos-rebuild test --flake .#nixos-vm`                                    |
-| Aplicar Home Manager             | `home-manager switch --flake .#joaop`                                       |
+| Aplicar Home Manager             | `home-manager switch --flake .#joaop@nixos-vm`                                       |
 | Atualizar Flake Lock             | `nix flake update`                                                         |
 
 ---
@@ -47,7 +47,7 @@ nix flake update
 sudo nixos-rebuild switch --flake .#nixos-vm
 
 # Reaplique configurações do usuário (Home Manager)
-home-manager switch --flake .#joaop
+home-manager switch --flake .#joaop@nixos-vm
 ```
 
 ---
