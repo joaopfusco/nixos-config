@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  import = [
-    # Generic modules
-    ./git.nix
-    ./zsh.nix
-    ./direnv.nix
-  ];
-
   home.packages = with pkgs; [
     # System utilities
     fastfetch
