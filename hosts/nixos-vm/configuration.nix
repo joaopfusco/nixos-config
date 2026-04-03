@@ -19,10 +19,21 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 
+  # Enable fwupd to keep firmware up to date
+  services.fwupd.enable = true;
+
   # Enable all firmware to support a wide range of hardware.
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   services.power-profiles-daemon.enable = true;
+
+  # Enable input devices
+  services.libinput.enable = true;
+  services.libinput.touchpad.tapping = true;
+  services.libinput.touchpad.naturalScrolling = true;
+
+  # Enable thermald for better thermal management on laptops and desktops.
+  services.thermald.enable = true;
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
