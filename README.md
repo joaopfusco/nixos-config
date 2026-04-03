@@ -14,10 +14,10 @@
    nix-shell -p git
    
    # Clone o repositório
-   git clone https://github.com/joaopfusco/nixos-config.git
+   git clone https://github.com/joaopfusco/nix-config.git
 
    # Entre no diretório
-   cd nixos-config
+   cd nix-config
    ```
 
 ---
@@ -77,10 +77,10 @@ Com a chave autorizada no GitHub, clone o repositório utilizando a URL SSH:
 
 ```bash
 # Clone o repositório
-git clone git@github.com:joaopfusco/nixos-config.git
+git clone git@github.com:joaopfusco/nix-config.git
 
 # Entre no diretório
-cd nixos-config
+cd nix-config
 ```
 
 ### 3. Executar o Script de Configuração

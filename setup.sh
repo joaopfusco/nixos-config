@@ -6,7 +6,7 @@ set -e
 read -p "Qual é o nome deste host? " HOSTNAME
 
 # Variável para o arquivo de trava de segurança
-LOCKFILE="$HOME/.config/nixos-config-setup-$HOSTNAME.lock"
+LOCKFILE="$HOME/.config/nix-config-setup-$HOSTNAME.lock"
 
 # 1. Trava de Segurança
 # Verifica se o setup já rodou para este host
