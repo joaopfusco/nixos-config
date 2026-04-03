@@ -31,12 +31,22 @@
     };
 
     initContent = ''
+      autoload -U select-word-style
+      select-word-style bash
+
+      bindkey '^H' backward-kill-word
+      bindkey '^[[3;5~' kill-word
+
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
+
+      ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
     '';
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "z" ];
-      # theme = "robbyrussell";
+      plugins = [ "git" "z" "docker" ];
+      theme = "robbyrussell";
     };
   };
 }
