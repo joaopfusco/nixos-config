@@ -12,9 +12,12 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
-      system = "x86_64-linux";
       username = "joaop";
-      hostNames = [ "nixos" "nixos-vm" ];
+      system = "x86_64-linux";
+
+      hostNames = builtins.attrNames (
+        nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir ./hosts)
+      );
 
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
