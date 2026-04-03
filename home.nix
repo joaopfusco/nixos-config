@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/home
+    ./modules
   ];
 
   # Enable the custom GNOME module
