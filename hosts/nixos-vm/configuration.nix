@@ -166,10 +166,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Basic utilities
-    home-manager
     wget
     curl
-    git
+    gcc
+    gnumake
+    gdb
     # Media codecs (GStreamer)
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
@@ -177,13 +178,7 @@
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
-  ] ++ (lib.optionals config.services.xserver.desktopManager.gnome.enable [
-    gnome-tweaks
-    gnome-extension-manager
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.appindicator
-    gnomeExtensions.dash-to-dock
-  ]);
+  ];
 
   # Automatically optimize the Nix store to save disk space
   nix.optimise.automatic = true;
