@@ -2,7 +2,7 @@
   description = "NixOS System Configuration";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0"; # Stable Nixpkgs (use 0.1 for unstable)
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "https://flakehub.com/f/nix-community/home-manager/0";
@@ -15,6 +15,14 @@
       username = "joaop";
       stateVersion = "25.11";
       system = "x86_64-linux";
+
+      commonHomeManager = {
+        nix.registry.unstable.flake = nixpkgs-unstable; # nix shell unstable#pkg
+        nix.registry.nixpkgs.flake = nixpkgs; # nix shell nixpkgs#pkg
+        home.username = username;
+        home.homeDirectory = "/home/${username}";
+        home.stateVersion = stateVersion;
+      };
 
       allHosts = builtins.attrNames (
         nixpkgs.lib.filterAttrs (name: type: type == "directory") (builtins.readDir ./hosts)
@@ -62,10 +70,10 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit host username inputs; };
               home-manager.users.${username} = {
-                imports = [ ./hosts/${host}/home.nix ];
-                home.username = username;
-                home.homeDirectory = "/home/${username}";
-                home.stateVersion = stateVersion;
+                imports = [ 
+                  ./hosts/${host}/home.nix
+                  commonHomeManager
+                ];
               };
             }
           ];
@@ -78,11 +86,7 @@
           extraSpecialArgs = { inherit host username inputs; }; 
           modules = [ 
             ./hosts/${host}/home.nix 
-            {
-              home.username = username;
-              home.homeDirectory = "/home/${username}";
-              home.stateVersion = stateVersion;
-            }
+            commonHomeManager
           ];
         };
       }) standaloneHosts);
