@@ -10,6 +10,7 @@
   };
 
   home.packages = with pkgs; [
+    papirus-icon-theme
     gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.clipboard-indicator

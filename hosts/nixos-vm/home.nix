@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ../../modules/cli-apps.nix
-    ../../modules/gui-apps.nix
-    ../../modules/gnome.nix
-    ../../modules/git.nix
-    ../../modules/zsh.nix
-    ../../modules/direnv.nix
+    ../../modules/user/pkgs/cli.nix
+    ../../modules/user/pkgs/gui.nix
+    ../../modules/user/gnome.nix
+    ../../modules/user/git.nix
+    ../../modules/user/zsh.nix
+    ../../modules/user/direnv.nix
   ];
 
   # Ignoring any other definition and using this one

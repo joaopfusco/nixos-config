@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ../../modules/cli-apps.nix
-    ../../modules/git.nix
-    ../../modules/zsh.nix
-    ../../modules/direnv.nix
+    ../../modules/user/pkgs/cli.nix
+    ../../modules/user/git.nix
+    ../../modules/user/zsh.nix
+    ../../modules/user/direnv.nix
   ];
 
   home.sessionVariables = {

@@ -10,6 +10,10 @@
     nixfmt
     any-nix-shell
 
+    # C/C++
+    gcc
+    gdb
+
     # Python
     uv
     python312
@@ -28,6 +32,7 @@
     clippy
 
     # Dev tools
+    gnumake
     distrobox
     terraform
     azure-cli
