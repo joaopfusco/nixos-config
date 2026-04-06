@@ -36,6 +36,17 @@
       picture-uri = "file://${../../wallpaper/jesus-crown.jpg}";
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Alt>Tab" ];
+      switch-applications = [ "<Super>Tab" ];
+      switch-applications-backward = [ "<Shift><Super>Tab" ];
+    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"

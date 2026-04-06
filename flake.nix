@@ -35,9 +35,7 @@
       ) allHosts;
 
       # Standalone hosts (e.g. Ubuntu)
-      standaloneHosts = builtins.filter (
-        host: !builtins.pathExists (./hosts + "/${host}/configuration.nix")
-      ) allHosts;
+      standaloneHosts = allHosts;
 
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
