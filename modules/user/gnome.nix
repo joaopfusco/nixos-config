@@ -28,6 +28,14 @@
       ];
     };
 
+    "org/gnome/desktop/background" = {
+      picture-uri = "file://${../../wallpaper/jesus-crown.jpg}";
+      picture-uri-dark = "file://${../../wallpaper/jesus-crown.jpg}";
+    };
+    "org/gnome/desktop/screensaver" = {
+      picture-uri = "file://${../../wallpaper/jesus-crown.jpg}";
+    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
