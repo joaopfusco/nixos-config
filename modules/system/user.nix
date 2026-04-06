@@ -6,6 +6,6 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Joao Pedro Fusco";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "dialout" ];
   };
 }
