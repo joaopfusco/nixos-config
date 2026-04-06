@@ -12,7 +12,7 @@
     # inputs.nixos-hardware.nixosModules.common-cpu-intel
     
     # Modules
-    # ../../modules/system/hardware/nvidia.nix
+    # ../../modules/system/hardware/intel-nvidia.nix
     ../../modules/system/system.nix
     ../../modules/system/gnome.nix
     ../../modules/system/user.nix
