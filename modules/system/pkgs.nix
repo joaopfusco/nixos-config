@@ -14,13 +14,7 @@
   programs.virt-manager.enable = true;
   virtualisation.libvirtd = {
     enable = true; 
-    qemu = {
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [ pkgs.OVMFFull.fd ];
-      };
-    };
+    qemu.swtpm.enable = true;
   };
   virtualisation.spiceUSBRedirection.enable = true;
 
