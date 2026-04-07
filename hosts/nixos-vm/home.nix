@@ -4,7 +4,6 @@
   imports = [
     ../../modules/user/pkgs/cli.nix
     ../../modules/user/pkgs/gui.nix
-    ../../modules/user/gnome.nix
     ../../modules/user/git.nix
     ../../modules/user/zsh.nix
     ../../modules/user/direnv.nix
