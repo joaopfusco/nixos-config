@@ -18,7 +18,6 @@
     gnome-extension-manager
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.appindicator
-    gnomeExtensions.dash-to-dock
   ];
 
   # Reset GNOME settings to default values
@@ -39,7 +38,6 @@
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
           "appindicatorsupport@rgcjonas.gmail.com"
-          "dash-to-dock@micxgx.gmail.com"
         ];
       };
 
@@ -71,7 +69,7 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>t";
+        binding = "<Ctrl><Alt>t";
         command = "kgx";
         name = "Terminal";
       };
