@@ -10,4 +10,7 @@
     enable = true;
     wayland.enable = true;
   };
+
+  # Enable XWayland for compatibility with X11 applications.
+  programs.xwayland.enable = true;
 }
