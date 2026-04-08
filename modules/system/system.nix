@@ -57,7 +57,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "us";
+  console.keyMap = "us-acentos";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
