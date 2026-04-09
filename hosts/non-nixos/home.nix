@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../../modules/user/pkgs/cli.nix
-    ../../modules/user/git.nix
-    ../../modules/user/zsh.nix
-    ../../modules/user/direnv.nix
-    ../../modules/user/kitty.nix
+    ../../modules/home/pkgs/cli.nix
+    ../../modules/home/git.nix
+    ../../modules/home/zsh.nix
+    ../../modules/home/direnv.nix
+    ../../modules/home/kitty.nix
   ];
 
   home.sessionVariables = {
