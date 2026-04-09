@@ -26,6 +26,12 @@
     rustfmt
     clippy
 
+    # C#
+    # (with dotnetCorePackages; combinePackages [
+    #   sdk_8_0
+    #   sdk_9_0
+    # ])
+
     # Dev tools
     gnumake
     terraform
@@ -42,5 +48,9 @@
   # macOS (Darwin)
   ++ lib.optionals stdenv.isDarwin [
     
+  ];
+
+  home.sessionPath = [
+    "$HOME/.dotnet/tools"
   ];
 }
