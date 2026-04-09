@@ -26,12 +26,6 @@
     rustfmt
     clippy
 
-    # C#
-    # (with dotnetCorePackages; combinePackages [
-    #   sdk_8_0
-    #   sdk_9_0
-    # ])
-
     # Dev tools
     gnumake
     terraform
@@ -43,7 +37,7 @@
     gcc
     gdb
     distrobox
-  ] 
+  ]
   
   # macOS (Darwin)
   ++ lib.optionals stdenv.isDarwin [
