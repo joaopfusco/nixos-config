@@ -8,7 +8,6 @@
     ../../modules/user/zsh.nix
     ../../modules/user/direnv.nix
     ../../modules/user/kitty.nix
-    ../../modules/user/dotnet.nix
   ];
 
   # Ignoring any other definition and using this one
