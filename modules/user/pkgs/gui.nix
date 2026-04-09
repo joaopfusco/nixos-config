@@ -8,13 +8,9 @@
     alacarte
     obs-studio
     google-chrome
+    vscode
     dbeaver-bin
     postman
     distroshelf
   ];
-
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode.fhs;
-  };
 }
