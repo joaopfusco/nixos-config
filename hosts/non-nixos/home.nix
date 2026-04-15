@@ -7,6 +7,7 @@
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix
     ../../modules/home/kitty.nix
+    ../../modules/home/nixvim.nix
   ];
 
   home.sessionVariables = {
