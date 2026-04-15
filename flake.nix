@@ -2,12 +2,11 @@
   description = "Nix Configuration";
 
   inputs = {
-    # Stable Nixpkgs (use 0.1 for unstable)
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "https://flakehub.com/f/NixOS/nixpkgs/0";
 
     home-manager = {
-      url = "https://flakehub.com/f/nix-community/home-manager/0";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -17,14 +16,14 @@
     };
 
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
+      url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, darwin, nixos-wsl, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, darwin, nixos-wsl, ... }@inputs:
     let
       username = "joaop";
       homeStateVersion = "25.11";
@@ -37,14 +36,14 @@
           then nixpkgs.lib.replaceStrings ["\n" " "] ["" ""] (builtins.readFile systemFile)
           else "x86_64-linux"; # Default
 
-      # pkgs.pkg -> stable
-      # pkgs.unstable.pkg -> unstable
+      # pkgs.pkg -> unstable
+      # pkgs.stable.pkg -> stable
       mkPkgs = system: import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
           (final: prev: {
-            unstable = import nixpkgs-unstable {
+            stable = import nixpkgs-stable {
               inherit system;
               config.allowUnfree = true;
             };
@@ -81,7 +80,7 @@
         host: builtins.pathExists (./hosts + "/${host}/darwin-configuration.nix")
       ) allHosts;
     in {
-      # Legacy packages for ad-hoc use (e.g. nix shell pkgs#<pkg> or nix shell pkgs#unstable.<pkg>)
+      # Legacy packages for ad-hoc use (e.g. nix shell pkgs#<pkg> or nix shell pkgs#stable.<pkg>)
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ] (system: mkPkgs system);
 
       # NixOS configurations
