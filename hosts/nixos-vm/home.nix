@@ -8,6 +8,8 @@
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix
     ../../modules/home/kitty.nix
+    ../../modules/home/nixvim.nix
+    ../../modules/home/dotnet/complete.nix
   ];
 
   # Ignoring any other definition and using this one

@@ -7,18 +7,8 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
-      # --- C# / .NET ---
-      netcoredbg
-      omnisharp-roslyn
-
-      # --- Ferramentas de Busca ---
       ripgrep
       fd
-
-      # --- Formatação e Linting ---
-      astyle
-
-      # --- Clipboard ---
       xclip
       wl-clipboard
     ];

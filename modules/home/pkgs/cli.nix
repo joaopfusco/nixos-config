@@ -43,8 +43,4 @@
   ++ lib.optionals stdenv.isDarwin [
     
   ];
-
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.dotnet/tools"
-  ];
 }

@@ -8,6 +8,7 @@
     ../../modules/home/direnv.nix
     ../../modules/home/kitty.nix
     ../../modules/home/nixvim.nix
+    ../../modules/home/dotnet/minimal.nix
   ];
 
   home.sessionVariables = {
