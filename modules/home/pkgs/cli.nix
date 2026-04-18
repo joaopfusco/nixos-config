@@ -43,7 +43,6 @@
   ++ lib.optionals stdenv.isLinux [
     gcc
     gdb
-    distrobox
   ]
   
   # macOS (Darwin)

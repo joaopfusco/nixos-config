@@ -9,6 +9,7 @@
     vscode
     obs-studio
     dbeaver-bin
+    distrobox
     distroshelf
     postman
   ];
