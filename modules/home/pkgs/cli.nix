@@ -10,6 +10,7 @@
     nixfmt
     alejandra
     nixd
+    nil
     statix
 
     # Python
@@ -45,9 +46,9 @@
     gcc
     gdb
   ]
-  
+
   # macOS (Darwin)
   ++ lib.optionals stdenv.isDarwin [
-    
+
   ];
 }
