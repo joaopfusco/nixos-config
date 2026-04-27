@@ -3,7 +3,6 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "Catppuccin-Mocha";
 
     settings = {
       shell = "${pkgs.zsh}/bin/zsh --login";
