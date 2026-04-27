@@ -26,8 +26,6 @@
         model_parameters = [ ];
       };
 
-      restore_on_startup = "empty_tab";
-
       languages = {
         Nix = {
           format_on_save = "off";
