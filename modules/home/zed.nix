@@ -15,17 +15,6 @@
     ];
 
     userSettings = {
-      agent = {
-        default_model = {
-          provider = "copilot_chat";
-          model = "gpt-5.3-codex";
-          enable_thinking = false;
-          effort = "high";
-        };
-        favorite_models = [ ];
-        model_parameters = [ ];
-      };
-
       languages = {
         Nix = {
           format_on_save = "off";

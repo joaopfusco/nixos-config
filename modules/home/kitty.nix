@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.kitty = {
@@ -9,7 +9,7 @@
       font_size = 12;
 
       # Window and Appearance
-      window_padding_width = 15;
+      window_padding_width = 10;
       confirm_os_window_close = 0;
       background_opacity = "1.00";
 
