@@ -40,6 +40,7 @@
     terraform
     azure-cli
     claude-code
+    devenv
   ]
 
   # Linux
