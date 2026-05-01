@@ -8,7 +8,8 @@
 
 {
   imports = [
-    ../../modules/home/pkgs/cli.nix
+    ../../modules/home/apps/some.nix
+    ../../modules/home/pkgs.nix
     ../../modules/home/git.nix
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix

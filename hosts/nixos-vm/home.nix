@@ -1,9 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
-    ../../modules/home/pkgs/cli.nix
-    ../../modules/home/pkgs/gui.nix
+    ../../modules/home/apps/all.nix
+    ../../modules/home/pkgs.nix
     ../../modules/home/git.nix
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix
