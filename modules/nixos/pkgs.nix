@@ -13,7 +13,7 @@
   # VM management
   programs.virt-manager.enable = true;
   virtualisation.libvirtd = {
-    enable = true; 
+    enable = true;
     qemu.swtpm.enable = true;
   };
   virtualisation.spiceUSBRedirection.enable = true;
@@ -24,7 +24,8 @@
     # Basic utilities
     wget
     curl
-    
+    distrobox
+
     # Media codecs (GStreamer)
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
