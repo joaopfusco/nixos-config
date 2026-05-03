@@ -1,4 +1,8 @@
-{ config, username, pkgs, ... }:
+{
+  username,
+  pkgs,
+  ...
+}:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -6,6 +10,13 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Joao Pedro Fusco";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "libvirtd"
+      "kvm"
+      "dialout"
+    ];
   };
 }

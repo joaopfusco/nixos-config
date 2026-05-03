@@ -1,39 +1,39 @@
 #!/usr/bin/env bash
 
-# Para o script se qualquer comando falhar
+# Stop the script if any command fails
 set -e
 
-read -p "Qual é o nome deste host? " HOSTNAME
+read -p "What is the name of this host? " HOSTNAME
 
-# 1. Cria a pasta do host se não existir
+# 1. Create the host directory if it doesn't exist
 if [ ! -d "hosts/$HOSTNAME" ]; then
-  echo "📁 Criando diretório para o host $HOSTNAME..."
+  echo "📁 Creating directory for host $HOSTNAME..."
   mkdir -p "hosts/$HOSTNAME"
 fi
 
-# 2. Lida com o hardware-configuration.nix (O local sempre manda)
-echo "⚙️  Copiando hardware-configuration.nix do sistema local (/etc/nixos/)..."
+# 2. Handle hardware-configuration.nix (local always wins)
+echo "⚙️  Copying hardware-configuration.nix from local system (/etc/nixos/)..."
 cp /etc/nixos/hardware-configuration.nix "hosts/$HOSTNAME/"
 git add "hosts/$HOSTNAME/hardware-configuration.nix"
 
-# 3. Lida com o configuration.nix (Preserva o do repositório, se existir)
+# 3. Handle configuration.nix (preserve the one from the repo, if it exists)
 if [ ! -f "hosts/$HOSTNAME/configuration.nix" ]; then
-  echo "📄 configuration.nix não encontrado no repositório. Copiando do sistema local..."
+  echo "📄 configuration.nix not found in repository. Copying from local system..."
   cp /etc/nixos/configuration.nix "hosts/$HOSTNAME/"
   git add "hosts/$HOSTNAME/configuration.nix"
 else
-  echo "📄 configuration.nix já existe no repositório. A versão do Git será mantida."
+  echo "📄 configuration.nix already exists in repository. The Git version will be kept."
 fi
 
-# 4. Exibe as instruções finais
+# 4. Display final instructions
 echo ""
-echo "✅ Arquivos gerados e configurados com sucesso para o host: $HOSTNAME!"
+echo "✅ Files successfully generated and configured for host: $HOSTNAME!"
 echo ""
-echo "🚀 Para aplicar a configuração, copie e cole UM dos comandos abaixo no terminal:"
+echo "🚀 To apply the configuration, copy and paste ONE of the commands below in the terminal:"
 echo ""
-echo "👉 Se esta máquina for NixOS:"
+echo "👉 If this machine is NixOS:"
 echo "   sudo nixos-rebuild switch --flake .#$HOSTNAME"
 echo ""
-echo "👉 Se esta máquina for Standalone (Ubuntu, Fedora, WSL, etc):"
+echo "👉 If this machine is Standalone (Ubuntu, Fedora, WSL, etc):"
 echo "   home-manager switch --flake .#joaop@$HOSTNAME"
 echo ""
