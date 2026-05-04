@@ -20,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database.url = "github:nix-community/nix-index-database";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
@@ -67,7 +68,10 @@
       commonHomeManager =
         { system }:
         {
+          imports = [ inputs.nix-index-database.homeModules.nix-index ];
           nix.registry.pkgs.flake = self;
+          programs.nix-index-database.comma.enable = true;
+          programs.nix-index.enable = true;
           home = {
             username = username;
             homeDirectory =
