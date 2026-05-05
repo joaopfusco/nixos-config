@@ -8,9 +8,6 @@
   # Install Firefox
   programs.firefox.enable = true;
 
-  # Docker
-  virtualisation.docker.enable = true;
-
   # VM management
   programs.virt-manager.enable = true;
   virtualisation.libvirtd = {

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -13,4 +13,9 @@
 
   # Enable XWayland for compatibility with X11 applications.
   programs.xwayland.enable = true;
+
+  # KDE Apps
+  environment.systemPackages = with pkgs; [
+    kontainer
+  ];
 }
