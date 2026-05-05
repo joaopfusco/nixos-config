@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../modules/home/pkgs.nix
-    ../../modules/home/gui-apps.nix
+    ../../modules/home/pkgs/cli.nix
+    ../../modules/home/pkgs/gui.nix
     ../../modules/home/git.nix
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix
