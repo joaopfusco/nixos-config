@@ -17,6 +17,7 @@
     ../../modules/nixos/system/full.nix
     ../../modules/nixos/pkgs/full.nix
     ../../modules/nixos/user.nix
+    ../../modules/nixos/ld.nix
   ];
 
   # Bootloader
