@@ -1,11 +1,8 @@
-{ pkgs, ... }:
-let
-  customKitty = if pkgs.stdenv.isDarwin then pkgs.emptyDirectory else pkgs.kitty;
-in
+{ pkgs, lib, ... }:
 {
   programs.kitty = {
     enable = true;
-    package = customKitty;
+    package = lib.mkDefault pkgs.emptyDirectory;
 
     themeFile = "Catppuccin-Mocha";
 

@@ -1,13 +1,8 @@
-{ pkgs, ... }:
-let
-  zedPackage = pkgs.zed-editor;
-  # zedPackage = pkgs.zed-editor-fhs;
-  customZed = if pkgs.stdenv.isDarwin then pkgs.emptyDirectory else zedPackage;
-in
+{ pkgs, lib, ... }:
 {
   programs.zed-editor = {
     enable = true;
-    package = customZed;
+    package = lib.mkDefault pkgs.emptyDirectory;
 
     extensions = [
       "html"
