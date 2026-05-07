@@ -7,7 +7,7 @@
     ../../modules/home/zsh.nix
     ../../modules/home/direnv.nix
     ../../modules/home/vim.nix
-    ../../modules/home/dotnet/full.nix
+    ../../modules/home/dotnet/base.nix
     ../../modules/home/kitty/config.nix
     ../../modules/home/zed/config.nix
   ];
