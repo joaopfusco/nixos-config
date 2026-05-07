@@ -4,11 +4,8 @@
     enable = true;
     package = lib.mkDefault pkgs.emptyDirectory;
 
-    themeFile = "Catppuccin-Mocha";
-
     settings = {
       shell = "zsh --login";
-      font_family = "JetBrainsMono Nerd Font";
       font_size = 12;
 
       # Window and Appearance

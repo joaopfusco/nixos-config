@@ -11,7 +11,6 @@
       "make"
       "csharp"
       "nix"
-      "catppuccin"
     ];
 
     userSettings = {
@@ -43,8 +42,7 @@
       ui_font_size = 16;
       buffer_font_size = 15;
 
-      # theme = "One Dark";
-      theme = "Catppuccin Mocha";
+      theme = "One Dark";
     };
 
     userKeymaps = [
