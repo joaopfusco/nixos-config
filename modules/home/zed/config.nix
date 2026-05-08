@@ -2,6 +2,8 @@
 {
   programs.zed-editor = {
     enable = true;
+    # mutableUserSettings = false; # only nix can modify
+    # mutableUserKeymaps = false; # only nix can modify
     package = lib.mkDefault pkgs.emptyDirectory;
 
     extensions = [
@@ -9,19 +11,16 @@
       "toml"
       "sql"
       "make"
-      "csharp"
       "nix"
     ];
 
     userSettings = {
       languages = {
-        CSharp = {
+        JSON = {
           format_on_save = "off";
-          language_servers = [
-            "roslyn"
-            "!omnisharp"
-            "..."
-          ];
+        };
+        JSONC = {
+          format_on_save = "off";
         };
       };
 
