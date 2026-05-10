@@ -7,11 +7,6 @@
     curl
   ];
 
-  # Fonts
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-  ];
-
   # Homebrew
   homebrew = {
     enable = true; # Requires Homebrew to be installed
@@ -37,7 +32,6 @@
       "obs"
       "dbeaver-community"
       "postman"
-      "kitty"
       "zed"
       "orbstack"
 

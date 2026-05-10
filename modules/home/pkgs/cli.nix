@@ -36,8 +36,6 @@
       fd
       fzf
       ripgrep
-      lazygit
-      gnumake
       terraform
       azure-cli
       claude-code
@@ -46,9 +44,7 @@
 
     # Linux
     ++ lib.optionals stdenv.isLinux [
-      gcc
-      gdb
-      nerd-fonts.jetbrains-mono
+
     ]
 
     # macOS (Darwin)
