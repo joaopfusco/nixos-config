@@ -62,7 +62,7 @@
         "z"
         "docker"
       ];
-      theme = "robbyrussell";
+      theme = "gentoo";
     };
   };
 }
