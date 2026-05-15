@@ -20,7 +20,7 @@
       la = "ls -la";
       cls = "clear";
       ins = "echo $IN_NIX_SHELL";
-      py = "python";
+      py = "python3";
       zed = "zeditor";
 
       # Flake aliases

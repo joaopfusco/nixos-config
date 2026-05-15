@@ -15,24 +15,11 @@
       nil
       statix
 
-      # Python
-      uv
-      python3
-
       # Node
       nodejs
 
-      # Go
-      go
-      gopls
-
-      # Rust
-      cargo
-      rustc
-      rustfmt
-      clippy
-
       # Others
+      uv
       gnumake
       terraform
       azure-cli
