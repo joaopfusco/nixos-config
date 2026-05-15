@@ -33,9 +33,7 @@
       clippy
 
       # Others
-      fd
-      fzf
-      ripgrep
+      gnumake
       terraform
       azure-cli
       claude-code
