@@ -12,6 +12,8 @@
       "sql"
       "make"
       "nix"
+      "dockerfile"
+      "git-firefly"
     ];
 
     userSettings = {
