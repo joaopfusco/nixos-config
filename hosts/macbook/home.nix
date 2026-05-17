@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home/nix.nix
     ../../modules/home/pkgs/cli.nix
     ../../modules/home/git.nix
     ../../modules/home/zsh.nix
