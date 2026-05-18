@@ -1,5 +1,4 @@
 {
-  pkgs,
   host,
   username,
   ...
@@ -28,11 +27,6 @@
 
   # Enable Zsh
   programs.zsh.enable = true;
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 
   # macOS system defaults
   system.defaults = {
